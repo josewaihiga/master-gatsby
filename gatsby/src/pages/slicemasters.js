@@ -45,6 +45,7 @@ export default function SliceMastersPage({ data }) {
 
   return (
     <>
+      <p>{process.env.GATSBY_PAGE_SIZE}</p>
       <SlicemastersGrid>
         {slicemasters.map((person) => (
           <SlicemasterStyles>
