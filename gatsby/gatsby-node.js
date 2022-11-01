@@ -64,7 +64,18 @@ async function turnSlicemastersIntoPages({ graphql, actions }) {
     }
   `);
 
-  // TODO: 2. Turn each slicemaster into their own page
+  // 2. Turn each slicemaster into their own page
+
+  const slicemasterTemplate = path.resolve('./src/templates/Slicemaster.js');
+
+  data.slicemasters.nodes.forEach((slicemaster) => {
+    actions.createPage({
+      path: `slicemaster/${slicemaster.slug.current}`,
+      component: slicemasterTemplate,
+      context: { id: slicemaster.id },
+    });
+    console.log(`created page for: ${slicemaster.name}`);
+  });
 
   // 3. Figure out how many pages there are based on how may slicemasters there are, and how many per page
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
@@ -75,13 +86,12 @@ async function turnSlicemastersIntoPages({ graphql, actions }) {
   );
 
   // 4. Loop from 1 to n and create pages for them
-
   Array.from({ length: pageCount }).forEach((_, i) => {
     console.log(`Creating page ${i}`);
     actions.createPage({
       path: `/slicemasters/${i + 1}`,
       component: path.resolve('./src/pages/slicemasters.js'),
-      // This data is pass to the template when we create it
+      // This data is passed to the template when we create it
       context: {
         skip: i * pageSize,
         currentPage: i + 1,
