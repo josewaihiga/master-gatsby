@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-
 import OrderContext from '../components/OrderContext';
 import attachNamesAndPrices from './attachNamesAndPrices';
 import calculateOrderTotal from './calculateOrderTotal';
@@ -16,7 +15,6 @@ export default function usePizza({ pizzas, values }) {
   const [message, setMessage] = useState('');
 
   // 2. Make a function to add things to order
-
   function addToOrder(orderedPizza) {
     setOrder([...order, orderedPizza]);
   }
@@ -46,11 +44,9 @@ export default function usePizza({ pizzas, values }) {
       name: values.name,
       email: values.email,
     };
-
     console.log(body);
 
-    // 4. Send this data to a serverless function when they checkout
-
+    // 4. Send this data the a serevrless function when they check out
     const res = await fetch(
       `${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`,
       {
