@@ -40,7 +40,7 @@ export default function Pagination({
   const hasNextPage = nextPage <= totalPages;
   const hasPrevPage = prevPage >= 1;
 
-  console.log(`current page: ${currentPage}`);
+  // console.log(`current page: ${currentPage}`);
 
   return (
     <PaginationStyles>

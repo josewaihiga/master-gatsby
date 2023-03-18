@@ -12,7 +12,7 @@ const PizzaGrid = styled.div`
 
 // An example of destructring a property two levels deep (not recommended).
 export default function SinglePizzaPage({ data: { pizza } }) {
-  console.log(pizza);
+  // console.log(pizza);
   return (
     <>
       <SEO title={pizza.name} image={pizza.image?.asset?.fluid?.src} />

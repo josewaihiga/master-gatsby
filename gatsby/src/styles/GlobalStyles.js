@@ -75,7 +75,11 @@ const GlobalStyles = createGlobalStyle`
     max-width: 100%;
   }
 
-  .tilt {
+  .mark {
+    display: inline;
+  }
+
+  .tilt, .mark.tilt {
     transform: rotate(-2deg);
     position: relative;
     display: inline-block;
