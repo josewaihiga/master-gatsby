@@ -55,7 +55,7 @@ export default {
                         topping3: 'toppings.3.name',
                 },
                 prepare: ({ title, media, ...toppings }) => {
-                        console.log(title, media, toppings);
+                        // console.log(title, media, toppings);
 
                         const tops = Object.values(toppings).filter(Boolean);
                         // TODO: Indicate if all toppings are vegetarian
