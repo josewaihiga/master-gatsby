@@ -17,9 +17,11 @@ const MenuItemStyles = styled.div`
   }
   button {
     font-size: 1.5rem;
+    margin-right: 1rem;
   }
   button + button {
-    margin-left: 1rem;
+    margin-left: 0;
+    margin-right: 1rem;
   }
   .remove {
     background: none;
