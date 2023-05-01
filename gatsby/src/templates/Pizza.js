@@ -5,9 +5,14 @@ import styled from 'styled-components';
 import SEO from '../components/SEO';
 
 const PizzaGrid = styled.div`
+  --min-column: 400px;
+
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-column), 1fr));
+  @media (max-width: 500px) {
+    --min-column: 200px;
+  }
 `;
 
 // An example of destructring a property two levels deep (not recommended).
